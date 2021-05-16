@@ -1,10 +1,14 @@
-// Copyright 2021
-#include <iostream>
-#include <string>
-
-#include "train.h"
+// Copyright Leonidek23 2021
+#include<iostream>
+#include"train.h"
 
 int main() {
-  return 0;
-}
 
+    Train train(50);
+    Cage*cage=train.first;
+    for (int i = 0; i < 50; ++i) {
+        std::cout<<(cage->get()?"o":"_");
+        cage=cage->next;
+    }
+    std::cout<<train.getlen();
+}
