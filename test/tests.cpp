@@ -1,4 +1,5 @@
 // Copyright Leonidek23 2021
+#include <gtest/gtest.h>
 #include <string>
 #include "train.h"
 
