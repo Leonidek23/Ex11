@@ -8,7 +8,6 @@ void Train::addCage(const bool dl) {
     this->last = newCage;
     newCage->next = this->first;
     newCage->prev = this->last;
-
 }
 
 unsigned int Train::getlen() {
@@ -29,11 +28,11 @@ unsigned int Train::getlen() {
 }
 
 Train::Train(int a) {
-    Cage *cage = new Cage(rand() % 2);
+    Cage *cage = new Cage(rand_r() % 2);
     first = cage;
     last = cage;
     for (int i = 0; i < a; ++i) {
-        addCage(rand() % 2);
+        addCage(rand_r() % 2);
     }
     last->next = first;
     first->prev = last;

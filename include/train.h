@@ -5,10 +5,10 @@
 #include<iostream>
 
 class Cage {
-    bool light; // Свет (вкл/выкл)
-public:
-    Cage *next; // следующий вагон
-    Cage *prev; // предыдущий вагон
+    bool light;  // Свет (вкл/выкл)
+ public:
+    Cage *next;  // следующий вагон
+    Cage *prev;  // предыдущий вагон
     explicit Cage(const bool dl) : light(dl), next(nullptr), prev(nullptr) {}
 
     void on() { light = true; }
@@ -19,8 +19,7 @@ public:
 };
 
 class Train {
-
-public:
+ public:
     void addCage(bool);
 
     explicit Train(int);

@@ -3,7 +3,6 @@
 #include"train.h"
 
 int main() {
-
     Train train(50);
     Cage *cage = train.first;
     for (int i = 0; i < 50; ++i) {
