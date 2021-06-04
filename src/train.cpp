@@ -2,7 +2,7 @@
 #include"train.h"
 
 void Train::addCage(const bool dl) {
-    Cage* newCage = new Cage(dl);
+    Cage *newCage = new Cage(dl);
     first->prev = newCage;
     last->next = newCage;
     this->last = newCage;
@@ -13,9 +13,9 @@ void Train::addCage(const bool dl) {
 
 unsigned int Train::getlen() {
     first->on();
-    int n=0;
-    Cage* currCage{first->next};
-    while(true) {
+    int n = 0;
+    Cage *currCage{first->next};
+    while (true) {
         while (!currCage->get()) {
             n++;
             currCage = currCage->next;
@@ -29,13 +29,12 @@ unsigned int Train::getlen() {
 }
 
 Train::Train(int a) {
-    Cage* cage=new Cage(rand()%2);
-    first=cage;
-    last=cage;
-    for(int i=0;i<a;++i)
-    {
-        addCage(rand()%2);
+    Cage *cage = new Cage(rand() % 2);
+    first = cage;
+    last = cage;
+    for (int i = 0; i < a; ++i) {
+        addCage(rand() % 2);
     }
-    last->next=first;
-    first->prev=last;
+    last->next = first;
+    first->prev = last;
 }
