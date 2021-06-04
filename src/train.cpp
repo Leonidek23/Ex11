@@ -28,11 +28,12 @@ unsigned int Train::getlen() {
 }
 
 Train::Train(int a) {
-    Cage *cage = new Cage(rand_r() % 2);
+    unsigned int seed = 1583;
+    Cage *cage = new Cage(rand_r(&seed) % 2);
     first = cage;
     last = cage;
     for (int i = 0; i < a; ++i) {
-        addCage(rand_r() % 2);
+        addCage(rand_r(&seed) % 2);
     }
     last->next = first;
     first->prev = last;
